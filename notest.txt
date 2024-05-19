@@ -1,0 +1,4 @@
+Joing by keys
+- keys joined together need the same data type
+- related keys can have different names that are relevant to the table the data is stored in
+- consistency

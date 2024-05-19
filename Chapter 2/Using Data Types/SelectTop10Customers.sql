@@ -9,3 +9,4 @@ GROUP BY Customer.CustomerID,
   LastName
 ORDER BY Sum(TotalDue) DESC
 LIMIT 10 -- Click on Run on active connection to run
+-- here we choose top 10 customers order by sum(totaldue) in descending order
