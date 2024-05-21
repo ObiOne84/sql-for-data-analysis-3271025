@@ -2,3 +2,68 @@ Joing by keys
 - keys joined together need the same data type
 - related keys can have different names that are relevant to the table the data is stored in
 - consistency
+
+2.3 Finding possible inaccurate data values
+- Comparision Operators
+(a) Equal to (=)
+(b) Not equal to (<>)
+(c) Greater than (>) hreater than or equal to (>=)
+(d) Less than (<), less than or equal to (<=)
+
+SELECT * FROM
+Orders
+WHERE CreationDate > '6/01/2016'
+
+Logical Operators
+Combine multiple boolean values and return a single boolean output of true or false.
+
+---
+
+Common Logical Operators:
+AND, OR, ALL, IS, NOT, LIKE, BETWEEN, IN, EXISTS, DISTINCT
+
+example.
+SELECT *
+FROM
+Product
+WHERE
+Variety = 'Blueberry'
+AND
+Price < 2.00
+
+Arithmetic Operators 
+Addition (+), Subtraction (-), Multiplication (*), Division (/), Module (%)
+
+Very important - Documentation
+* a defintion of the data in each column
+* the source of the data in the column
+* how the data in each column is calculated
+* the valid values allowed in a column
+
+2.4 Finding duplicate rows
+Identify duplicate values in your data and how they can affect the data in your applications using the GROUP BY and HAVING clauses.
+
+GROUP BY - we can group together rows that have the same values, and aggregate function provide on data value summarized from many records.
+
+(a) Aggregate functions
+COUNT() - number of rows
+SUM() - sum of values
+AVG() - average values
+MIN() - minimum values
+MAX() - maximum values
+
+duplicate
+A duplicate row happens if the record is not unqiue, this means there are two or more rows that are exactly the same!
+
+
+HAVING clause allows to use some additional filtering based on the results of aggregate functions.
+
+Remember!
+WHERE allows you to filter non-aggregate column data
+HAVING allows you to filter aggregate data like SUM(), COUNT()
+Helpful for identifying duplicate values in your data
+
+MySQL Data Types
+
+DATA (YYYY-MM-DD), DATETIME (YYYY-MM-DD hh:mm:ss[.nnn]), TIMESTAMP, YEAR
+
