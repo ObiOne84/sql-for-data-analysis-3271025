@@ -67,3 +67,119 @@ MySQL Data Types
 
 DATA (YYYY-MM-DD), DATETIME (YYYY-MM-DD hh:mm:ss[.nnn]), TIMESTAMP, YEAR
 
+SQL Functions
+- Built-in operations in SQL that return value.
+- Can take in one or more arguments.
+- Example Function(Arg1, Arg2)
+- Functionality depends on data type (some functions won't work on string)
+
+Common string functions
+- CONCAT()
+- UPPER()
+- LOWER()
+- TRIM()
+- REPLACE()
+- SUBSTRING()
+
+SUBSTRING() - takes 3 arguments, SUBSTRING(string, start, length) for example:
+
+SELECT FirstName, LastName
+FROM Customer
+WHERE
+SUBSTRING(LastName, 1,3) = 'Smi'
+
+CONCAT() - allows us to join two or more strings together, CONCAT(string1,string2,...,string_n)
+for example:
+SELECT
+    CONCAT(Firstname, '' ,LastName) AS FULL_NAME
+FROM
+    Customer
+
+UPPER() - returns uppercase
+LOWER() - return lowercase
+
+for example:
+SELECT 
+UPPER(CONCAT(FirstName, '' ,LastName)) AS FULL_NAME
+FROM Customer
+
+or 
+
+SELECT 
+LOWER(CONCAT(FirstName, '' ,LastName)) AS FULL_NAME
+FROM Customer
+
+REPLACE()   - replaces a substring with another substring REPLACE(string, old_string, new_string)
+for example:
+SELECT
+    REPLACE(State, 'CA', 'California') AS   FULL_STATE
+FROM  
+    Customer
+WHERE
+    State = 'CA'
+
+
+TRIM() - removes specified characters from the start or end of a string TRIM(characters FROM string)
+for example:
+SELECT TRIM(
+  'M'
+  FROM ProductCode
+) AS TrimmedProductCode
+FROM Product
+
+LTRIM() - function that can remove leading spaces from a character on the left
+RTRIM() - function that can remove trailing spaces
+
+Common Agggregate Functions
+COUNT() - find the frequency of values in a data set
+
+SELECT COUNT(DISTINCT CustomerID)
+from Orders; here we can count number of customers who placed order (without repeating customers)
+
+DATA MANIPULATION
+CRUD Functionality
+INSERT - CREATE
+SELECT - READ
+UPDATE - UPDATE
+DELETE - DELETE
+
+INSERT - allows us to add new record to our tables (adding new customer, order)
+CREATE - we use this in data definition language to create new tables or views
+UPDATE - allows to update exisitng records
+DELETE - allows us to delete database records
+
+INSERT INTO tablename(column1, column2, ...)
+VALUES (value1, value2, ...)
+
+UPDATE tablename SET column1 = new_value
+WHERE column1 = exisitng_value
+
+DELETE FROM tablename
+WHERE column1 = exisitng_value
+
+
+SQL Transactions
+
+BEGIN TRANSACTION
+COMMIT
+ROLLBACK
+
+
+By default if we perform CRUD operations, they are automatically commmited to database. 
+However, you can explicitly run a trancation by adding begin trancation.
+If an error occurs, we can rollback changes to what they were before and if all is good we can commit.
+This is known as transact-SQL and is an important part of the development process
+especially when dealing with large transactions that involve cascading changes across the database.
+Transact-SQL ensures integrity of the database by preventing process from continuing if
+an error has occured in our data processing.
+
+Transact-SQL
+- dealing with large Transactions
+- referential integrity
+- error handling
+
+Plotly - python library
+- open source graphing library
+- explore and manage data
+- provide insights
+- build data apps in Python with Dash

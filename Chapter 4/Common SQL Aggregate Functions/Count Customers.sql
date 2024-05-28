@@ -1,2 +1,5 @@
+-- SELECT COUNT(CustomerID)
+-- from Customer;
+
 SELECT COUNT(CustomerID)
-from Customer;
+FROM Orders;
